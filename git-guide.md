@@ -27,9 +27,9 @@ Branch - This will create a new branch for instance the branch main in our repos
 
 Checkout - This will change the branch you are wanting. Example: git checkout codys-branch 
 
-.get folder - This folder can contain mainly information for version control and commits. Example: git init
+.git folder - This folder can contain mainly information for version control and commits. Example: git init
 
-.getignore - This is a folder that will hold files and directories that will be ignored, it basically hides the file.                    Example: vim .gitignore
+.gitignore - This is a folder that will hold files and directories that will be ignored, it basically hides the file.                    Example: vim .gitignore
 
 GitHub Pull Request - You can vice versa here. Pull request from the github's UI rather than your command prompt.
 
