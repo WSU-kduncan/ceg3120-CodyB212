@@ -34,7 +34,8 @@ addresses connection/communication to my VPC. This works as a firewall in which 
 and the IP's consist of 130.108.0.0/16 "Wright State" and 18.205.222.246/32 "AWS."
 
 (Picture shown in "Images" directory in github. Picture Name: Security Group)
------------------------------------------------------------------------------------------------------------------------------------------PART 2 - EC2 INSTANCES
+-----------------------------------------------------------------------------------------------------------------------------------------
+PART 2 - EC2 INSTANCES
 
 Step 1: 
 
