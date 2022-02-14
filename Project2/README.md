@@ -80,6 +80,7 @@ Step 9: Host Name
 
 To change the Ubuntu's hostname I ran hostname, which showed ubunut, then ran sudo -u root hostname BRADLEY-AMI. This changed my host
 name successfully!
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 Step 10: Screenshot
 
