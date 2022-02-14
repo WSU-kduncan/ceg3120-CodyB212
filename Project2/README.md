@@ -1,4 +1,5 @@
-(Part 1 - Build a VPC)
+PART 1 - BUILD A VPC
+
 Step 1: Creating VPC
 
 The created VPC is named BRADLEY-VPC. This VPC will create a virtual private network with 10.0.0.0/24 in CIDR block formatting,
@@ -33,7 +34,9 @@ addresses connection/communication to my VPC. This works as a firewall in which 
 and the IP's consist of 130.108.0.0/16 "Wright State" and 18.205.222.246/32 "AWS."
 
 (Picture shown in "Images" directory in github. Picture Name: Security Group)
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
-(Part 2 - EC2 Instances)
+-----------------------------------------------------------------------------------------------------------------------------------------PART 2 - EC2 INSTANCES
+
+Step 1: 
+
+
 
