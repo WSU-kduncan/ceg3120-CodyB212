@@ -37,7 +37,39 @@ and the IP's consist of 130.108.0.0/16 "Wright State" and 98.28.114.87/32 "Perso
 -----------------------------------------------------------------------------------------------------------------------------------------
 PART 2 - EC2 INSTANCES
 
-Step 1: 
+Step 1: Creating New Instance
+
+For this step I decided to use Ubuntu server 20.04 LTS. The default username for Ubuntu is ubuntu. The instance type I picked is t2.microWhich this is the best option, because we are cheap and want it free!
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 2: Attach Instance to VPC
+
+I used the drop down window to select my VPC and subnet.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 3: Determine IPv4
+
+I disabled the auto create, because we are not wanting aws to change our ip address later. Therefore, we will be separately creating the elastic IP and attaching it to the instance.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 4: Attaching Volume
+
+For this part I made the volume 16 GiB.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 5: Adding Tag
+
+For the Tag I made the Key: Name and the Value: BRADLEY-Ubuntu. 
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 6: Security Group
+
+I had to select my BRADLEY-sg which showed my inbound rules and then chose existing key pair, finally I pressed review and launch.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 7: Elastic IP
+
+Had to go to Network and Security tab and select Elastic IPs and then asscoicate my a Private IP.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Step 8: Screenshot
+
+(Picture shown in "Images" directory in github. Picture Name: Instance Details)
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
