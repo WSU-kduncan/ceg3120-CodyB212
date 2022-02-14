@@ -25,4 +25,11 @@ gateway target. This will send all trafic to gateway giving internet connection!
 
 (Picture shown in "Images" directory in github. Picture Name: Route Table)
 -----------------------------------------------------------------------------------------------------------------------------------------
+Step 5: Creating Security Group
 
+I created a security group that it attached to my BRADLEY-VPC. I created 2 inbound rules, which gives my AWS and wright state IP 
+addresses connection/communication to my VPC. This works as a firewall in which governs the connections allowed to be made to my VPC and outbounding traffic. However, we don't mess with the outbound, only the inbound rules. I made it so the connections are through SSH type 
+and the IP's consist of 130.108.0.0/16 "Wright State" and 18.205.222.246/32 "AWS."
+
+(Picture shown in "Images" directory in github. Picture Name: Security Group)
+-----------------------------------------------------------------------------------------------------------------------------------------
