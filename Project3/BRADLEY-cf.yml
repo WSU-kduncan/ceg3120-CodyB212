@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: >-
+Description: BRADLEY CF Template to create a VPC with trusted SSH connections, and an instance with a Elastic IP.
   Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
 Parameters:
   KeyName:
@@ -21,13 +21,13 @@ Mappings:
   AWSRegionUbuntu: # AMI for Ubuntu server in each supported region 
     us-east-1:   # N. Virginia
       PV64: NOT_SUPPORTED
-      HVM64: ami-07d0cf3af28718ef8
+      HVM64: ami-04505e74c0741db8d
       HVMG2: NOT_SUPPORTED
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
     Properties:
-      CidrBlock: 10.0.0.0/16
+      CidrBlock: 10.0.0.0/24
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -37,7 +37,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.0.0/24
+      CidrBlock: 10.0.0.0/28
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
