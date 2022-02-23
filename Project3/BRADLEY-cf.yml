@@ -133,6 +133,7 @@ Resources:
             apt-get install -y \
               git \
               htop \
-              sl && \
+              python3 \
+              pip3 && \
             echo "This is from the CF template" > /home/ubuntu/hello.txt && \
             reboot
