@@ -138,9 +138,9 @@ Resources:
           ToPort: '22'
           CidrIp: 130.108.0.0/16  # WSU CIDR
         - IpProtocol: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: 108.222.118.252/32  # Replace with home / trusted public IP
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 192.168.1.205/32  # Replace with home / trusted public IP
           # TODO Need more rules for port 80 access
       Tags: 
         - Key: Name
@@ -178,6 +178,7 @@ Resources:
             apt-get update && \
             # TODO need to install haproxy
             apt-get install -y git python3 python3-pip && \
+            apt-get install -y haproxy && \
             hostnamectl set-hostname proxy && \
             reboot
   WebServ1Instance:
@@ -205,7 +206,7 @@ Resources:
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref PrivateSubnet
-          PrivateIpAddress: 10.0.1.10 # TODO make sure unique to the instance
+          PrivateIpAddress: 10.0.1.20 # TODO make sure unique to the instance
       UserData:
         Fn::Base64:
           !Sub |
@@ -213,6 +214,46 @@ Resources:
             apt-get update && \
             # TODO need to install apache or nginx
             apt-get install -y git && \
+            apt-get install -y apache2 && \
             # TODO give it a hostname - hostnamectl  && \
+            hostnamectl set-hostname webserv1 && \
+            reboot
+# TODO: create another webserver instance attached to the private subnet
+   WebServ2Instance:
+    Type: 'AWS::EC2::Instance'
+    DependsOn: AttachGateway
+    Properties:
+      ImageId: !FindInMap 
+        - AWSRegionUbuntu
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - t2.micro
+          - Arch
+      InstanceType: t2.micro
+      KeyName: !Ref KeyName
+      Tags:
+        - Key: Application
+          Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: webserv2
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref SecurityGroup
+          AssociatePublicIpAddress: 'false'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PrivateSubnet
+          PrivateIpAddress: 10.0.1.30 # TODO make sure unique to the instance
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            apt-get update && \
+            # TODO need to install apache or nginx
+            apt-get install -y git && \
+            apt-get install -y apache2 && \
+            # TODO give it a hostname - hostnamectl  && \
+            hostnamectl set-hostname webserv2 && \
             reboot
 # TODO: create another webserver instance attached to the private subnet
