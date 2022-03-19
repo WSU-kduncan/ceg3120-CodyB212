@@ -223,7 +223,7 @@ Resources:
             hostnamectl set-hostname webserv1 && \
             reboot
 # TODO: create another webserver instance attached to the private subnet
-  WebServ1Instance:
+  WebServ2Instance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
     Properties:
