@@ -13,6 +13,7 @@ getting at, if not I used the haproxy website givin in the project description f
 
 4: For both servers I had to configure the index.html file which was in the path /var/html/index.html. I used the html template provided in in the project description. There were no configuartions, beside it was just the default page and replaced with the template. The path was /var/html/index.html, because this is the default path apache implements the index files. To restart you could use systemctl restart apache2. The main resource used was the default index.html telling me the path of where to edit and replace the files. The big help was using your templates and online recorded videos.
 
-5: ![Webserver1 Photo](Images/Webserv1.PNG) 
+5:
+   ![Webserver1 Photo](Images/Webserv1.PNG) 
    ![Webserver1 Photo](Images/Webserv2.PNG)
 
