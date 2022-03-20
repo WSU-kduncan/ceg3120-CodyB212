@@ -15,5 +15,5 @@ getting at, if not I used the haproxy website givin in the project description f
 
 5:
    ![Webserver1 Photo](Images/Webserv1.PNG) 
-   ![Webserver1 Photo](Images/Webserv2.PNG)
+   ![Webserver1 Photo](Images/Webserv2.PNG) This was also a typo, mean to say hosted on server2, didn't notice till I was finished. 
 
